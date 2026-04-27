@@ -4,7 +4,8 @@
 # =============================================================================
 # Description: Identifies viral sequences from assembled metagenomic contigs
 #              using multiple tools (VIBRANT, geNomad, VirSorter2) and
-#              validates results with CheckV.
+#              validates results with CheckV. Predicted sequences are further
+#              screened to remove plasmids (PLASMe) and concatemers (mummer4).
 #
 # Tools required:
 #   - seqkit       : sequence filtering and manipulation
@@ -12,7 +13,8 @@
 #   - geNomad      : end-to-end virus/plasmid identification
 #   - VirSorter2   : virus identification via machine learning
 #   - CheckV       : viral sequence quality assessment
-#
+#   - PLASMe       : plasmid identification and removal
+#   - mummer4      : concatemer detection via self-alignment
 # =============================================================================
 
 
