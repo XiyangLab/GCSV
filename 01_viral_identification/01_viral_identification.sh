@@ -143,3 +143,17 @@ checkv end_to_end \
 #   quality_summary.tsv  : completeness, contamination, quality tier per sequence
 #   proviruses.fna       : trimmed provirus sequences
 #   viruses.fna          : complete viral sequences
+
+# -----------------------------------------------------------------------------
+# Step 7: Detect Plasmids and Concatemers
+# -----------------------------------------------------------------------------
+
+# Plasmids
+python PLASMe.py \
+viral_contigs.fna \
+-d PLASMe/DB \
+-m high-precision \
+-t 50
+
+# Concatemers
+python3 detect_concatemer.py viral_contigs.fna warning_concatemer.tsv
